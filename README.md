@@ -3,6 +3,8 @@
 Hands-on agent course adapted from [brevdev/workshop-build-an-agent](https://github.com/brevdev/workshop-build-an-agent),
 using **RunPod OpenAI-compatible endpoints** instead of NVIDIA NIM.
 
+**Student lab (public):** [github.com/f2ka07/skilleo-build-an-agent](https://github.com/f2ka07/skilleo-build-an-agent)
+
 ## Pedagogy
 
 1. Configure API keys when first needed (not a long platform tour).
@@ -10,6 +12,22 @@ using **RunPod OpenAI-compatible endpoints** instead of NVIDIA NIM.
 3. Run the CLI — expect errors or success.
 4. Explain what the output means.
 5. Behaviour tests live **in the lab**: students observe tool selection, args, results, missing info, and failures.
+
+## How to open the lab
+
+| Path | What to do |
+|------|------------|
+| **Skilleo VS Code** | Open VS Code from the main lab — Module 1 is already on disk. |
+| **Own PC** | Install [VS Code](https://code.visualstudio.com/) + Git, then clone (below). |
+| **Windows** | Prefer **WSL** or **Git Bash** so Bash commands match the course. |
+
+```bash
+git clone https://github.com/f2ka07/skilleo-build-an-agent.git
+cd skilleo-build-an-agent
+git checkout module-1-tool-calling
+```
+
+(In this monorepo the same files live under `workshops/build-an-agent-runpod`.)
 
 ## Repo layout (git branches = outcomes)
 
@@ -23,11 +41,10 @@ using **RunPod OpenAI-compatible endpoints** instead of NVIDIA NIM.
 ## Quick start (Module 1)
 
 ```bash
-cd workshops/build-an-agent-runpod
 python -m venv .venv
-# Windows: .venv\Scripts\activate
+source .venv/bin/activate   # Windows Git Bash: source .venv/Scripts/activate
 pip install -r requirements.txt
-cp .env.example .env   # set RUNPOD_API_KEY
+cp .env.example .env        # set RUNPOD_API_KEY
 
 python -m module_1.smoke_tools --endpoint qwen3
 ```
