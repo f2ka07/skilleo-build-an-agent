@@ -42,5 +42,13 @@ Notes for slides:
 ## Next outcome branches
 
 - `module-1-tool-calling` — this smoke suite green on Qwen3 (and optional Kimi).
-- `module-1-report-agent` — build report agent; saved markdown/report file is the outcome.
-- Narrated Skilleo Module 1 slides — drafted from this log (`docs-prompts/Build-An-Agent/module-1-script.md`).
+- `module-2-report-agent` — `python -m module_2.smoke_report` green; file under `reports/`.
+- Narrated Skilleo Module 1 — `docs-prompts/Build-An-Agent/module-1-script.md`.
+- Narrated Skilleo Module 2 — `docs-prompts/Build-An-Agent/module-2-script.md`.
+
+## Module 2 notes (report agent)
+
+- Same `.env` and venv as Module 1 — no new key.
+- Tools: `get_weather` (controlled test data) + `write_report` (writes `reports/*.md`).
+- Pass rule: chat-only answers fail; `write_report` must create a file that names the city.
+- Cold endpoint waits still apply; narrate the hold on Code + CLI slides.
